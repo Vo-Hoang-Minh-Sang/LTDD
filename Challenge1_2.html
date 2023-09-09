@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Du lieu 1
+        var MMark = 78;
+        var HMark = 1.69;
+        var MJohn = 92;
+        var HJohn = 1.95;
+        //Du lieu 2
+        var MMark2 = 95;
+        var HMark2 = 1.88;
+        var MJohn2 = 85;
+        var HJohn2 = 1.76;
+
+        function BMI(x, y) {
+            return x / (y * y);
+        }
+        console.log("Ket qua bo du lieu 1");
+        BMIMark = BMI(MMark, HMark);
+        console.log('BMI cua Mark la ', BMIMark);
+        BMIJohn = BMI(MJohn, HJohn);
+        console.log('BMI cua john la ', BMIJohn);
+
+        markHigherBMI = BMIMark > BMIJohn;
+        if (markHigherBMI) {
+            console.log("BMI Mark cao hon John");
+        } else {
+            console.log("BMI John cao hon Mark");
+        }
+        console.log(markHigherBMI);
+        console.log("Ket qua bo du lieu 2");
+        BMIMark2 = BMI(MMark2, HMark2);
+        console.log('BMI cua Mark la ', BMIMark2);
+        BMIJohn2 = BMI(MJohn2, HJohn2);
+        console.log('BMI cua john la ', BMIJohn2);
+
+        markHigherBMI2 = BMIMark2 > BMIJohn2;
+        if (markHigherBMI2) {
+            console.log("BMI Mark cao hon John");
+        } else {
+            console.log("BMI John cao hon Mark");
+        }
+        console.log(markHigherBMI2);
+    </script>
+</body>
+
+</html>

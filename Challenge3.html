@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Data
+        const DScores1 = [96, 108, 89];
+        const KScores1 = [88, 91, 110];
+
+        const DScoresBonus1 = [97, 112, 101];
+        const KScoresBonus1 = [109, 95, 123];
+
+        const DScoresBonus2 = [97, 112, 101];
+        const KScoresBonus2 = [109, 95, 106];
+
+        //1. Tính điểm trung bình
+        const avg = (scores) => {
+            const total = scores.reduce((acc, score) => acc + score, 0);
+            return total / scores.length;
+        };
+
+        //2. So sánh điểm trung bình để tìm người chiến thắng
+        const checkWinner = (DScores, KScores) => {
+            const dolphinsAvg = avg(DScores);
+            const koalasAvg = avg(KScores);
+
+            if (dolphinsAvg >= 100 && dolphinsAvg > koalasAvg) {
+                console.log("Dolphins win!");
+            } else if (koalasAvg >= 100 && koalasAvg > dolphinsAvg) {
+                console.log("Koalas win!");
+            } else if (dolphinsAvg >= 100 && koalasAvg >= 100 && dolphinsAvg === koalasAvg) {
+                console.log("It's a draw!");
+            } else {
+                console.log("No one wins!");
+            }
+        };
+
+        // Test Data 1
+        console.log("Data 1:");
+        checkWinner(DScores1, KScores1);
+
+        // Data Bonus 1
+        console.log("\nData Bonus 1:");
+        checkWinner(DScoresBonus1, KScoresBonus1);
+
+        // Data Bonus 2
+        console.log("\nData Bonus 2:");
+        checkWinner(DScoresBonus2, KScoresBonus2);
+
+
+
+    </script>
+
+</body>
+
+</html>
