@@ -1,23 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
         const DScores1 = [44, 23, 71];
         const KScores1 = [65, 54, 49];
 
-        const DScoresBonus1 = [85, 54, 41];
-        const KScoresBonus1 = [23, 34, 27];
+        const DScores2 = [85, 54, 41];
+        const KScores2 = [23, 34, 27];
 
         const avg = (scores) => {
             const total = scores.reduce((acc, score) => acc + score, 0);
             return total / scores.length;
         };
 
+        const avgDolphins1 = avg(DScores1);
+        const avgKoalas1 = avg(KScores1);
+
+        const avgDolphins2 = avg(DScores2);
+        const avgKoalas2 = avg(KScores2);
+
+        const checkWinner = (avgDolphins, avgKoalas) => {
+            if (avgDolphins >= 2 * avgKoalas) {
+                console.log(`Dolphins win (${avgDolphins} vs. ${avgKoalas})`);
+            } else if (avgKoalas >= 2 * avgDolphins) {
+                console.log(`Koalas win (${avgKoalas} vs. ${avgDolphins})`);
+            } else {
+                console.log("No team wins!");
+            }
+        };
+
+        // Step 4: Determine the winner for both Data 1 and Data 2
+        console.log("Data 1:");
+        checkWinner(avgDolphins1, avgKoalas1);
+
+        console.log("\nData 2:");
+        checkWinner(avgDolphins2, avgKoalas2);
+
     </script>
 </body>
+
 </html>
