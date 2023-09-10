@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. Tạo objects  Mark và John
+        var mark = {
+            fullName: "Mark Miller",
+            mass: 78,
+            height: 1.69,
+            //2. tính BMI
+            calcBMI: function () {
+                this.bmi = this.mass / (this.height ** 2);
+                return this.bmi;
+            },
+        };
+
+        var john = {
+            fullName: "John Smith",
+            mass: 92,
+            height: 1.95,
+
+            calcBMI: function () {
+                this.bmi = this.mass / (this.height ** 2);
+                return this.bmi;
+            },
+        };
+
+        //3. Tính BMI và so sánh
+        mark.calcBMI();
+        john.calcBMI();
+
+        if (mark.bmi > john.bmi) {
+            console.log(`${mark.fullName}'s BMI (${mark.bmi}) is higher than ${john.fullName}'s (${john.bmi})!`);
+        } else if (john.bmi > mark.bmi) {
+            console.log(`${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName}'s (${mark.bmi})!`);
+        } else {
+            console.log(`Both ${mark.fullName} and ${john.fullName} have the same BMI (${mark.bmi})!`);
+        }
+
+    </script>
+</body>
+
+</html>
